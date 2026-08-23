@@ -1,0 +1,447 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f7f7;
+  --foreground: #171717;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+
+/* =========================
+   PAGE
+   ========================= */
+
+.projects-page {
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.projects-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 70px 40px 40px;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.projects-hero h1 {
+  margin: 12px 0 14px;
+  font-size: clamp(52px, 7vw, 82px);
+  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -3px;
+}
+
+.hero-description {
+  margin: 0;
+  color: #555;
+  font-size: 16px;
+}
+
+
+/* =========================
+   SHARED SECTION HEADING
+   ========================= */
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+
+/* =========================
+   FEATURED WINNERS
+   ========================= */
+
+.featured-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px 60px;
+}
+
+.featured-section .section-heading {
+  margin-bottom: 24px;
+}
+
+.featured-section h2 {
+  margin: 6px 0 0;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.featured-card {
+  display: grid;
+  grid-template-columns: 42% 58%;
+  overflow: hidden;
+
+  background: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 14px;
+}
+
+.featured-image {
+  min-height: 260px;
+  background: #ddd;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #666;
+  font-size: 13px;
+}
+
+.featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-card-body {
+  min-width: 0;
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-card-body h3 {
+  margin: 10px 0 5px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.featured-card-body .participants {
+  margin-bottom: 14px;
+}
+
+.featured-card-body a {
+  margin-top: auto;
+  padding-top: 18px;
+
+  color: #111;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================
+   FILTER CONTROLS
+   ========================= */
+
+.projects-controls {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 0 40px;
+
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) 160px 170px;
+  gap: 12px;
+}
+
+.projects-controls input,
+.projects-controls select {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+
+  background: white;
+  color: #222;
+
+  border: 1px solid #d5d5d5;
+  border-radius: 9px;
+
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.projects-controls input {
+  grid-column: 1;
+}
+
+.projects-controls select {
+  cursor: pointer;
+}
+
+/* Placement */
+.projects-controls select:nth-of-type(3) {
+  grid-column: 1;
+}
+
+/* Year */
+.projects-controls select:nth-of-type(4) {
+  grid-column: 2;
+}
+
+
+/* =========================
+   PAST PROJECTS
+   ========================= */
+
+.projects-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.projects-section .section-heading {
+  margin-bottom: 24px;
+}
+
+.projects-section .section-heading>span {
+  color: #666;
+  font-size: 12px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+
+/* =========================
+   PROJECT CARD
+   ========================= */
+
+.project-card {
+  overflow: hidden;
+
+  background: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 14px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.project-image {
+  height: 210px;
+  background: #ddd;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #666;
+  font-size: 13px;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card-body {
+  padding: 20px;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+
+  color: #777;
+  font-size: 11px;
+}
+
+.project-card h3 {
+  margin: 12px 0 7px;
+
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.participants {
+  margin: 0 0 14px;
+
+  color: #555;
+  font-size: 13px;
+}
+
+.project-tags,
+.technology-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.project-tags span,
+.technology-list span {
+  padding: 6px 10px;
+
+  background: #f0f0f0;
+  border-radius: 999px;
+
+  font-size: 11px;
+}
+
+.project-description {
+  margin: 18px 0;
+
+  color: #444;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.technology-list {
+  margin-bottom: 20px;
+}
+
+.project-card-body>a {
+  color: #111;
+
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.project-card-body>a:hover,
+.featured-card-body>a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   EMPTY SEARCH
+   ========================= */
+
+.no-results {
+  grid-column: 1 / -1;
+
+  padding: 60px 20px;
+
+  text-align: center;
+  color: #666;
+}
+
+.no-results h3 {
+  margin: 0 0 8px;
+  color: #222;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 900px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .projects-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .projects-controls input {
+    grid-column: 1 / -1;
+  }
+
+  .projects-controls select:nth-of-type(3),
+  .projects-controls select:nth-of-type(4) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .projects-hero,
+  .featured-section,
+  .projects-controls,
+  .projects-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .projects-hero {
+    padding-top: 45px;
+  }
+
+  .projects-hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .featured-card {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-image {
+    min-height: 200px;
+  }
+
+  .projects-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-controls input,
+  .projects-controls select,
+  .projects-controls select:nth-of-type(3),
+  .projects-controls select:nth-of-type(4) {
+    grid-column: 1;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
