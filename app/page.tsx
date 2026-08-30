@@ -1,4 +1,5 @@
 "use client";
+import PhotoGallery from "./components/PhotoGallery";
 
 import { useMemo, useState } from "react";
 
@@ -307,6 +308,7 @@ export default function Home() {
           )}
         </div>
       </section>
+      <PhotoGallery />
     </main>
   );
 }
