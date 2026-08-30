@@ -1,4 +1,5 @@
 "use client";
+import Testimonials from "./components/Testimonials";
 
 import { useMemo, useState } from "react";
 
@@ -307,6 +308,7 @@ export default function Home() {
           )}
         </div>
       </section>
+      <Testimonials />
     </main>
   );
 }
